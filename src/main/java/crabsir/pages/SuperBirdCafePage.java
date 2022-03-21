@@ -8,4 +8,8 @@ public class SuperBirdCafePage extends BasePage {
         super(webDriver);
     }
 
+    public void ensurePageLoaded() {
+        ensurePageLoaded(Locators.SuperBirdCafePageLocators.ensureLocator);
+    }
+
 }

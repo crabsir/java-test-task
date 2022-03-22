@@ -12,7 +12,7 @@ public class TestSuperBirdCafe {
     WebDriver driver;
     SuperBirdCafePage cafePage;
 
-    @BeforeAll
+    @BeforeEach
     public void oneTimeSetup() {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -27,7 +27,7 @@ public class TestSuperBirdCafe {
         cafePage.ensurePageLoaded();
     }
 
-    @AfterAll
+    @AfterEach
     public void oneTimeTearDown() {
         driver.close();
     }

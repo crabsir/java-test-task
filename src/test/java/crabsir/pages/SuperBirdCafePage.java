@@ -14,22 +14,33 @@ public class SuperBirdCafePage extends BasePage {
 
     public SuperBirdCafePage ensurePageLoaded() {
         return (SuperBirdCafePage) ensurePageLoaded(
-                Locators.SuperBirdCafePageLocators.ensureLocator, Locators.SuperBirdCafePageLocators.pageTitle
+            Locators.SuperBirdCafePageLocators.ensureLocator, Locators.SuperBirdCafePageLocators.pageTitle
         );
     }
 
-    public WebElement selectFirstMenuItem() {
-        return selectElement(Locators.SuperBirdCafePageLocators.firstMenuItem);
-    }
-
-    public void selectSortingMethod(String method) {
-        Select sortingMethodDropdown = new Select (
-                driver.findElement(By.cssSelector(Locators.SuperBirdCafePageLocators.sortingMethod))
-        );
-        sortingMethodDropdown.selectByVisibleText(method);
-        WebElement firstItem = selectFirstMenuItem();
+    public void confirmFirstMenuItem(String itemText) {
+        WebElement firstItem = selectElement(Locators.SuperBirdCafePageLocators.firstMenuItem);
         Assertions.assertTrue(firstItem.isDisplayed());
-        Assertions.assertEquals(firstItem.getText(), Locators.SuperBirdCafePageLocators.firstItemText);
+        Assertions.assertEquals(firstItem.getText(), itemText);
+    }
+
+    public Select selectSortingDropdown() {
+        return new Select(driver.findElement(By.cssSelector(Locators.SuperBirdCafePageLocators.sortingMethod)));
+    }
+
+    public SuperBirdCafePage selectSortingMethod(String method) {
+        selectSortingDropdown().selectByVisibleText(method);
+        confirmFirstMenuItem(Locators.SuperBirdCafePageLocators.firstItemMap.get(method));
+        return this;
+    }
+
+    public SuperBirdCafePage setDescendingOrder() {
+        String sortingMethod = selectSortingDropdown().getFirstSelectedOption().getText();
+        WebElement reverseOrder = selectElement(Locators.SuperBirdCafePageLocators.reverseOrder);
+        Assertions.assertTrue(reverseOrder.isDisplayed());
+        reverseOrder.click();
+        confirmFirstMenuItem(Locators.SuperBirdCafePageLocators.firstItemMap.get(sortingMethod + " descending"));
+        return this;
     }
 
 }

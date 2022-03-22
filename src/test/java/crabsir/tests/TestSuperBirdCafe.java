@@ -26,7 +26,8 @@ public class TestSuperBirdCafe {
 
         cafePage
             .ensurePageLoaded()
-            .selectSortingMethod("Product Name");
+            .selectSortingMethod("Product Name")
+            .setDescendingOrder();
     }
 
     @AfterEach

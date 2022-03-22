@@ -13,11 +13,11 @@ public class TestSuperBirdCafe {
     SuperBirdCafePage cafePage;
 
     @BeforeEach
-    public void oneTimeSetup() {
+    public void setup() {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        String PAGE_URL = "https://highlifeshop.com/speedbird-cafe";
-        driver.get(PAGE_URL);
+        String pageUrl = "https://highlifeshop.com/speedbird-cafe";
+        driver.get(pageUrl);
     }
 
     @Test
@@ -28,7 +28,7 @@ public class TestSuperBirdCafe {
     }
 
     @AfterEach
-    public void oneTimeTearDown() {
+    public void teardown() {
         driver.close();
     }
 

@@ -24,7 +24,10 @@ public class Locators {
             "Product Name", "Afternoon Tea Box Sultana Scone, Clotted Cream and Strawberry Preserve",
             "Price", "Savoursmiths Somerset Cheddar & Shallot Potato Crisps 35g",
             "New Arrivals", "Aviation American Gin 5cl",
-            "Product Name descending", "Wolfys Porridge Honey"
+            "Position descending", "MEAL BUNDLES",
+            "Product Name descending", "Wolfys Porridge Honey",
+            "Price descending", "Pannier Brut NV Champagne 375ml",
+            "New Arrivals descending", "Aviation American Gin 5cl"
         );
     }
 

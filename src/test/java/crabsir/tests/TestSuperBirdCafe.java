@@ -27,7 +27,17 @@ public class TestSuperBirdCafe {
         cafePage
             .ensurePageLoaded()
             .acceptCookies()
-            .selectSortingMethod("Product Name")
+            .selectSortingMethod("Product Name");
+    }
+
+    @Test
+    public void testSortingByPriceDescending() {
+        cafePage = new SuperBirdCafePage(driver);
+
+        cafePage
+            .ensurePageLoaded()
+            .acceptCookies()
+            .selectSortingMethod("Price")
             .setDescendingOrder();
     }
 

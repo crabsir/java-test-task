@@ -26,6 +26,7 @@ public class TestSuperBirdCafe {
 
         cafePage
             .ensurePageLoaded()
+            .acceptCookies()
             .selectSortingMethod("Product Name")
             .setDescendingOrder();
     }

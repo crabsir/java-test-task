@@ -28,6 +28,11 @@ public class SuperBirdCafePage extends BasePage {
         return new Select(driver.findElement(By.cssSelector(Locators.SuperBirdCafePageLocators.sortingMethod)));
     }
 
+    public SuperBirdCafePage acceptCookies() {
+        selectElement(Locators.SuperBirdCafePageLocators.acceptCookies).click();
+        return this;
+    }
+
     public SuperBirdCafePage selectSortingMethod(String method) {
         selectSortingDropdown().selectByVisibleText(method);
         confirmFirstMenuItem(Locators.SuperBirdCafePageLocators.firstItemMap.get(method));

@@ -11,6 +11,8 @@ public class Locators {
             "British Airways Speedbird Café | Duty Free Goods Online | Buy On Board Online | BA Speedbird Café " +
             "| BA High Life Shop Highlifeshop.com";
 
+        public static String acceptCookies = "#btn-cookie-allow";
+
         public static String sortingMethod = "#sorter";
 
         public static String firstMenuItem = "div > strong > a";

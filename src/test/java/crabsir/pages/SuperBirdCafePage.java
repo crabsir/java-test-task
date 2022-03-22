@@ -45,14 +45,13 @@ public class SuperBirdCafePage extends BasePage {
         return selectSortingMethod(method, "");
     }
 
-    public void setDescendingOrder() {
+    public SuperBirdCafePage setDescendingOrder() {
         String sortingMethod = selectSortingDropdown().getFirstSelectedOption().getText();
         WebElement reverseOrder = selectElement(Locators.SuperBirdCafePageLocators.reverseOrder);
         Assertions.assertTrue(reverseOrder.isDisplayed());
         reverseOrder.click();
         confirmFirstMenuItem(Locators.SuperBirdCafePageLocators.firstItemMap.get(sortingMethod + " descending"));
-        //Uncomment this if you would like to chain more commands after it
-        //return this;
+        return this;
     }
 
 }

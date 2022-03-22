@@ -18,12 +18,11 @@ public class TestSuperBirdCafe {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         String pageUrl = "https://highlifeshop.com/speedbird-cafe";
         driver.get(pageUrl);
+        cafePage = new SuperBirdCafePage(driver);
     }
 
     @Test
     public void testSortingByProductName() {
-        cafePage = new SuperBirdCafePage(driver);
-
         cafePage
             .ensurePageLoaded()
             .acceptCookies()
@@ -32,13 +31,21 @@ public class TestSuperBirdCafe {
 
     @Test
     public void testSortingByPriceDescending() {
-        cafePage = new SuperBirdCafePage(driver);
-
         cafePage
             .ensurePageLoaded()
             .acceptCookies()
             .selectSortingMethod("Price")
             .setDescendingOrder();
+    }
+
+    @Test
+    public void testSortingOrderPersists() {
+        cafePage
+            .ensurePageLoaded()
+            .acceptCookies()
+            .selectSortingMethod("Price")
+            .setDescendingOrder()
+            .selectSortingMethod("Position", " descending");
     }
 
     @AfterEach

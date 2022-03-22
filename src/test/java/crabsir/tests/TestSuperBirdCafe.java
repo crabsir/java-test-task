@@ -1,4 +1,4 @@
-package crabsir;
+package crabsir.tests;
 
 import crabsir.pages.SuperBirdCafePage;
 import org.junit.jupiter.api.*;

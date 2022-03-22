@@ -9,7 +9,7 @@ public class SuperBirdCafePage extends BasePage {
     }
 
     public void ensurePageLoaded() {
-        ensurePageLoaded(Locators.SuperBirdCafePageLocators.ensureLocator);
+        ensurePageLoaded(Locators.SuperBirdCafePageLocators.ensureLocator, Locators.SuperBirdCafePageLocators.pageTitle);
     }
 
 }

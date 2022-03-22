@@ -22,9 +22,10 @@ public class BasePage {
         return wait;
     }
 
-    public void ensurePageLoaded(String locator, String title) {
+    public BasePage ensurePageLoaded(String locator, String title) {
         webWait(driver).until(e -> e.findElement(By.cssSelector(locator)));
         Assertions.assertEquals(driver.getTitle(), title);
+        return this;
     }
 
 }

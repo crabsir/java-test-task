@@ -35,10 +35,14 @@ public class SuperBirdCafePage extends BasePage {
         return this;
     }
 
-    public SuperBirdCafePage selectSortingMethod(String method) {
+    public SuperBirdCafePage selectSortingMethod(String method, String order) {
         selectSortingDropdown().selectByVisibleText(method);
-        confirmFirstMenuItem(Locators.SuperBirdCafePageLocators.firstItemMap.get(method));
+        confirmFirstMenuItem(Locators.SuperBirdCafePageLocators.firstItemMap.get(method + order));
         return this;
+    }
+
+    public SuperBirdCafePage selectSortingMethod(String method) {
+        return selectSortingMethod(method, "");
     }
 
     public void setDescendingOrder() {

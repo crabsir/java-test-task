@@ -24,6 +24,7 @@ public class BasePage {
 
     public void ensurePageLoaded(String locator, String title) {
         webWait(driver).until(e -> e.findElement(By.cssSelector(locator)));
+        Assertions.assertEquals(driver.getTitle(), title);
     }
 
 }

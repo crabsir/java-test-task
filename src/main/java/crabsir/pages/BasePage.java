@@ -15,15 +15,10 @@ public class BasePage {
         this.driver = webDriver;
     }
 
-
-    public static WebDriverWait webWait(WebDriver driver, long timeout) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeout));
+    public static WebDriverWait webWait(WebDriver driver) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.ignoring(NoSuchElementException.class);
         return wait;
-    }
-
-    public static WebDriverWait webWait(WebDriver driver) {
-        return webWait(driver, 10);
     }
 
     public void ensurePageLoaded(String locator) {

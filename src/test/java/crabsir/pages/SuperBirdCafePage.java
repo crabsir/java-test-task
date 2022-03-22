@@ -29,7 +29,9 @@ public class SuperBirdCafePage extends BasePage {
     }
 
     public SuperBirdCafePage acceptCookies() {
-        selectElement(Locators.SuperBirdCafePageLocators.acceptCookies).click();
+        WebElement allowCookies = selectElement(Locators.SuperBirdCafePageLocators.acceptCookies);
+        Assertions.assertTrue(allowCookies.isDisplayed());
+        allowCookies.click();
         return this;
     }
 
@@ -45,7 +47,8 @@ public class SuperBirdCafePage extends BasePage {
         Assertions.assertTrue(reverseOrder.isDisplayed());
         reverseOrder.click();
         confirmFirstMenuItem(Locators.SuperBirdCafePageLocators.firstItemMap.get(sortingMethod + " descending"));
-        //return this; --Uncomment this if you would like to chain more commands after it
+        //Uncomment this if you would like to chain more commands after it
+        //return this;
     }
 
 }

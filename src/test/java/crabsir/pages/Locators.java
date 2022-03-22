@@ -10,6 +10,10 @@ public class Locators {
                 "| BA High Life Shop Highlifeshop.com";
 
         public static String sortingMethod = "#sorter";
+
+        public static String firstMenuItem = "div > strong > a";
+
+        public static String firstItemText = "Afternoon Tea Box Sultana Scone, Clotted Cream and Strawberry Preserve";
     }
 
 }

@@ -1,10 +1,11 @@
 package crabsir.pages;
 
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.junit.jupiter.api.Assertions;
 
 import java.time.Duration;
 
@@ -26,6 +27,10 @@ public class BasePage {
         webWait(driver).until(e -> e.findElement(By.cssSelector(locator)));
         Assertions.assertEquals(driver.getTitle(), title);
         return this;
+    }
+
+    public WebElement selectElement(String locator) {
+        return webWait(driver).until(e -> e.findElement(By.cssSelector(locator)));
     }
 
 }

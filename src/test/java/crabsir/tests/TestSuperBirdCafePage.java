@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
-public class TestSuperBirdCafe {
+public class TestSuperBirdCafePage {
 
     WebDriver driver;
     SuperBirdCafePage cafePage;

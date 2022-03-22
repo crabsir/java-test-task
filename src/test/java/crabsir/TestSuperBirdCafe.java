@@ -1,11 +1,35 @@
 package crabsir;
 
 import crabsir.pages.SuperBirdCafePage;
+import org.junit.jupiter.api.*;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import java.time.Duration;
 
 public class TestSuperBirdCafe {
 
-    private final String PAGE_URL = "https://highlifeshop.com/speedbird-cafe";
+    WebDriver driver;
+    SuperBirdCafePage cafePage;
 
-    SuperBirdCafePage cafePage = (SuperBirdCafePage) SuperBirdCafePage.goTo(PAGE_URL);
+    @BeforeAll
+    public void oneTimeSetup() {
+        driver = new ChromeDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        String PAGE_URL = "https://highlifeshop.com/speedbird-cafe";
+        driver.get(PAGE_URL);
+    }
+
+    @Test
+    public void testSortingByProductName() {
+        cafePage = new SuperBirdCafePage(driver);
+
+        cafePage.ensurePageLoaded();
+    }
+
+    @AfterAll
+    public void oneTimeTearDown() {
+        driver.close();
+    }
 
 }

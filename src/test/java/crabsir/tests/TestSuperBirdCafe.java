@@ -24,7 +24,9 @@ public class TestSuperBirdCafe {
     public void testSortingByProductName() {
         cafePage = new SuperBirdCafePage(driver);
 
-        cafePage.ensurePageLoaded();
+        cafePage
+            .ensurePageLoaded()
+            .selectSortingMethod("Product Name");
     }
 
     @AfterEach

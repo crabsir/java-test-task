@@ -20,7 +20,7 @@ public class SuperBirdCafePage extends BasePage {
         Select sortingMethodDropdown = new Select (
                 driver.findElement(By.cssSelector(Locators.SuperBirdCafePageLocators.sortingMethod))
         );
-        sortingMethodDropdown.selectByValue(method);
+        sortingMethodDropdown.selectByVisibleText(method);
     }
 
 }
